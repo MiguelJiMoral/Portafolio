@@ -1,29 +1,23 @@
-package com.mijim.usuarios.tareaslista.Entity;
+package com.mijim.usuarios.tareaslista.DTO;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-@Entity
-@Table(name = "users")
-public class User {
+public class UserDTO {
 
-    @Id
-    @Column(name = "user_id", length = 45)
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int usersId;
-
-    @Column(name = "username", length = 255)
     private String username;
-
-    @Column(name = "password", length = 255)
     private String password;
 
-    public User(int usersId, String username, String password) {
+    public UserDTO(int usersId, String username, String password) {
         this.usersId = usersId;
         this.username = username;
         this.password = password;
     }
 
-    public User() {
+    public UserDTO() {
     }
 
     public int getUsersId() {
@@ -52,10 +46,11 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "UserDTO{" +
                 "usersId=" + usersId +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';
     }
+
 }
